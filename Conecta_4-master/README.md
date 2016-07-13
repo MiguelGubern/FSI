@@ -1,6 +1,7 @@
 # Conecta_4
 
-Asignatura: Fundamentos de los Sistemas Inteligentes. 2015/2016 Alumnos del Grupo: - Santiago Miguel Gubern González, Kevin Real Alcalde
+Asignatura: Fundamentos de los Sistemas Inteligentes. 2015/2016 Alumnos del Grupo: Santiago Miguel Gubern González, Kevin Real Alcalde
+
 Para el desarrollo de la práctica Conecta 4, hemos modificado los ficheros run.py y games.py, así como la creación
 de un nuevo fichero llamado heu.py que contiene la heurística.
 
