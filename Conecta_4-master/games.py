@@ -184,7 +184,7 @@ class Game:
         return state.to_move
 
     def display(self, state):
-        "Print or otherwise display the state."
+        "Print or otherwise  display the state."
         print state
 
     def successors(self, state):
