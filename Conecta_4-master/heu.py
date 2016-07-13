@@ -1,6 +1,6 @@
 from __future__ import print_function
 
-
+#Método que calcula el valor de la heuristica para un eje o diagonal.
 def line_four(state, move, player, (delta_x, delta_y)):
     if player == 'X':
         enemy = 'O'
@@ -10,7 +10,8 @@ def line_four(state, move, player, (delta_x, delta_y)):
     x, y = move
     line_of = 0
     value = 0
-
+    
+    #En un sentido
     while (8 > x > 0) and (7 > y > 0):
         if state.board.get((x, y)) == player:
             line_of += 1
@@ -25,6 +26,7 @@ def line_four(state, move, player, (delta_x, delta_y)):
     x, y = move
     x, y = x - delta_x, y - delta_y # Restamos para evitar contarnos a nosotros mismos.
 
+    #En el otro sentido
     while (8 > x > 0) and (7 > y > 0):
         if state.board.get((x, y)) == player:
             line_of += 1
@@ -40,7 +42,7 @@ def line_four(state, move, player, (delta_x, delta_y)):
         return value
     return 0
 
-
+#Metodo que calcula el valor final para la heuristita de los movimientos legales
 def run_heuristic(state, player, dificultad):
     if player == 'X':
         enemy = 'O'
@@ -52,7 +54,6 @@ def run_heuristic(state, player, dificultad):
 
     if player == 'O' and state.utility != 0:
         return state.utility * -1000000
-
 
 
     heuristic_value = 0
