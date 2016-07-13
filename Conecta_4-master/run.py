@@ -1,8 +1,9 @@
 # coding=utf-8
 
 from __future__ import print_function
-import heu
+import heu as heuristic
 import games
+import heu
 
 # game = games.TicTacToe(h=3,v=3,k=3)
 game = games.ConnectFour()
@@ -10,9 +11,10 @@ game = games.ConnectFour()
 state = game.initial
 dificultad = int(-1)
 
-#Método en el que sucede toda la partida
+# Método en el que sucede toda la partida
 def play(state, player):
     while True:
+
         print ("Jugador a mover:", game.to_move(state))
 
         game.display(state)
@@ -51,7 +53,7 @@ def play(state, player):
             print("Final de la partida")
             break
 
-#Empieza averiguendo cuál va a ser la dificultad (fácil, medio o difícil) y quién es el que empieza (jugador o máquina)
+# Empieza averiguendo cuál va a ser la dificultad (fácil, medio o difícil) y quién es el que empieza (jugador o máquina)
 while True:
     string_input = raw_input(
         "Escoja la dificultad con la que desea enfrentarse a la máquina, fácil(0), medio(1) o difícil(2)")
