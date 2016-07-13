@@ -1,12 +1,8 @@
 # coding=utf-8
+
 from __future__ import print_function
-from __future__ import print_function
-from __future__ import print_function
-from __future__ import print_function
-from __future__ import print_function
-import heu as heuristic
-import games
 import heu
+import games
 
 # game = games.TicTacToe(h=3,v=3,k=3)
 game = games.ConnectFour()
@@ -14,14 +10,10 @@ game = games.ConnectFour()
 state = game.initial
 dificultad = int(-1)
 
+#Método en el que sucede toda la partida
 def play(state, player):
     while True:
-        if player == 'X':
-            print ("Jugador a mover:", game.to_move(state))
-
-        else:
-            print ("Jugador a mover:", game.to_move(state))
-
+        print ("Jugador a mover:", game.to_move(state))
 
         game.display(state)
 
@@ -43,7 +35,7 @@ def play(state, player):
             # move = games.alphabeta_full_search(state, game)
             # state, game, d=4, cutoff_test=None, eval_fn=None, player='X', dificultad=2
             if dificultad == 2:
-                move = games.alphabeta_search(state, game, d=3, eval_fn=heu.run_heuristic, player=player,
+                move = games.alphabeta_search(state, game, d=4, eval_fn=heu.run_heuristic, player=player,
                                               dificultad=dificultad)
             if dificultad == 1:
                 move = games.alphabeta_search(state, game, d=2, eval_fn=heu.run_heuristic, player=player,
@@ -59,6 +51,7 @@ def play(state, player):
             print("Final de la partida")
             break
 
+#Empieza averiguendo cuál va a ser la dificultad (fácil, medio o difícil) y quién es el que empieza (jugador o máquina)
 while True:
     string_input = raw_input(
         "Escoja la dificultad con la que desea enfrentarse a la máquina, fácil(0), medio(1) o difícil(2)")
@@ -80,7 +73,4 @@ while True:
         player = 'O'
         break
 
-if player == 'X':
-    play(state, 'X')
-if player == 'O':
-    play(state, 'O')
+play(state, player)
